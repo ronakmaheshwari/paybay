@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { number } from "zod";
 
-mongoose.connect("mongodb+srv://ronak:AP5Ku86v1Jc540Vj@cluster0.gq8an.mongodb.net/paytm");
+mongoose.connect("mongodb+srv://ronak:H0qQSnbatnu59WxV@cluster0.gq8an.mongodb.net/paytm");
 
 const userSchema = new Schema({
     username: String,

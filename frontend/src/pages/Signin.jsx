@@ -24,7 +24,7 @@ export default function Signin(){
                                     const response = await axios.post("http://localhost:3000/api/v1/user/signin",{username:username,password:password});
                                     if(response.status == 200){
                                         localStorage.setItem("token",response.data.token);
-                                        navigate("/send")
+                                        navigate("/dashboard")
                                     }
                                 }} />
                             </div>

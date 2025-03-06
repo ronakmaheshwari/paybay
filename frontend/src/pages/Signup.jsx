@@ -5,12 +5,14 @@ import Heading from "../components/Heading";
 import InputBox from "../components/InputBox";
 import Subheading from "../components/Subheading";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup(){
     const[first,setFirst] = useState("");
     const[last,setLast] = useState("");
     const[mail,setMail] = useState("");
     const[password,setPassword] = useState("");
+    const navigate = useNavigate();
 
     return (
     <div className="bg-slate-300 h-screen flex justify-center">
@@ -26,6 +28,7 @@ export default function Signup(){
                 <Button label={"Sign up"} onClick={async ()=>{
                  const response = await axios.post("http://localhost:3000/api/v1/user/signup",{username:mail,firstName:first,lastName:last,password:password});
                  localStorage.setItem("token",response.data.token);
+                 navigate("/dashboard");
                 }} />
             </div>
         <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
